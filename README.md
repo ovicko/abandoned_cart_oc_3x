@@ -35,11 +35,11 @@ Features
 
 On the next page load, you should see an alert indicating issues that may need your attention.  For each abandoned cart, the alert count will +1
 
-![alerts](./images/alerts.png)
+![alerts](./images/alerts.PNG)
 
 By clicking the alerts icon, you will see a new Bailed Carts entry.  Following that link, will take you to a list of all unpaid shopping carts that meet your criteria set in the Abandoned Carts configuration.
 
-![duplicate warning](./images/navigation.png)
+![duplicate warning](./images/navigation.PNG)
 
 As you can see from this screenshot, the system automatically will notify you if this user has another order in the system -- one might indicate a successful checkout.  In such event, you want to ensure you don't send them an email from this screen without verifying they haven't already completed checkout (or already received a follow-up)!
 
