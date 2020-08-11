@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Abandoned Carts</name>
+    <code>abandoned_carts_oc_ovicko</code>
+    <description>Reach out to prospects with bailed carts; gain valuable insight to usability and recover lost sales.</description>
+    <version>1.0.0</version>
+    <author>Ovicko</author>
+    <link>https://ovicko.com</link>
+
+    <file path="admin/controller/common/header.php">
+        <operation error="skip" info="Model inclusion for abandoned carts.">
+            <search ><![CDATA[
+             $this->load->language('common/header');
+              ]]></search>
+            <add position="after"><![CDATA[
+              $this->load->model('extension/module/abandoned_carts');
+        			// Bailed Carts
+              $bailed_carts_total         = ($this->config->get('module_abandoned_carts_status') == '1') ? $this->model_extension_module_abandoned_carts->getTotalOrders() : '0';
+        			$data['bailed_carts_total'] = $bailed_carts_total;
+        			$data['bailed_carts']       = $this->url->link('extension/report/abandoned_carts', 'user_token=' . $this->session->data['user_token'], true);
+            ]]></add>
+        </operation>
+    </file>
+
+    <file path="admin/language/en-gb/common/header.php">
+        <operation error="skip" info="English language definition for bailed carts menu entry.">
+            <search ><![CDATA[
+              $_['text_logout']        = 'Logout';
+              ]]></search>
+            <add position="after"><![CDATA[
+              $_['text_bailed_carts']      = 'Bailed Carts';
+            ]]></add>
+        </operation>
+    </file>
+
+    <file path="admin/view/template/common/header.twig">
+        <operation error="skip" info="Adds a link in header alerts to bailed carts breakdown.">
+            <search ><![CDATA[
+              <li class="dropdown-header">{{ text_store }}</li>
+              ]]></search>
+            <add position="after"><![CDATA[
+              {% if bailed_carts_total and  bailed_carts_total > 0 %}
+                <li class="divider"></li>
+                <li><a href="{{ bailed_carts }}" style="display: block; overflow: auto;">
+                <span class="label label-danger pull-right">{{ bailed_carts_total }}</span>{{ text_bailed_carts }}</a></li>
+              {% endif %}
+            ]]></add>
+        </operation>
+    </file>
+</modification>
