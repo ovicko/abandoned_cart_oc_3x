@@ -18,19 +18,28 @@ Features
 ***
 
 
-## [:link: Install Instructions](installing.md) ##
+## [:link: Install Instructions](installation.md) ##
 
 ***
+
+## Help & Support ##
+ I offer the following services at a negotiable fee:
+ - Installation of this module and other OpenCart modules
+ - Upgrading modules/extensions
+ - Bug Fixing OpenCart websites,themes etc
+ - Payment Gateway Integrations
+
+ Contact thehomestra@gmail.com for help
 
 ## Usage ##
 
 On the next page load, you should see an alert indicating issues that may need your attention.  For each abandoned cart, the alert count will +1
 
-![alerts](images/alerts.png)
+![alerts](./images/alerts.png)
 
 By clicking the alerts icon, you will see a new Bailed Carts entry.  Following that link, will take you to a list of all unpaid shopping carts that meet your criteria set in the Abandoned Carts configuration.
 
-![duplicate warning](images/navigation.png)
+![duplicate warning](./images/navigation.png)
 
 As you can see from this screenshot, the system automatically will notify you if this user has another order in the system -- one might indicate a successful checkout.  In such event, you want to ensure you don't send them an email from this screen without verifying they haven't already completed checkout (or already received a follow-up)!
 
@@ -64,15 +73,6 @@ If you changed your admin url to something other  than /admin (as *everyone* sho
 This extension should be multi-store compatible out of the box, but was *not* tested to ensure compatibility.
 
 Tested in a single shopping cart environment running PHP 7.0+
-
-## Help & Support ##
- I offer the following services at a negotiable fee:
- - Installation of this module and other OpenCart modules
- - Upgrading modules/extensions
- - Bug Fixing OpenCart websites,themes etc
- - Payment Gateway Integrations
- 
- Contact thehomestra@gmail.com for help
 
 ### Note ###
 You do not need to clone this repository to utilize the plugin, all you have to do is download the
